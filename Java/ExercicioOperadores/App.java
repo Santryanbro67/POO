@@ -5,5 +5,4 @@ public class App {
         NotaAlunos objeto1 = new NotaAlunos();
         objeto1.notaFrequencia();
     }
-    
 }
