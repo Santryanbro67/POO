@@ -3,7 +3,7 @@ package POOInterface;
 public class Quadrado implements FigurasGeometricas{
     int lado;
 
-    //construtor
+    //construtor com parâmetros
     public Quadrado(int lado) {
         this.lado = lado;
     }
