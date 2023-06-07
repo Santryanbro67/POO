@@ -1,7 +1,7 @@
 package POOExercicio1;
 
 public class Pessoa {
-    // atributos(nome, altura, dataNascimento)
+    // atributos(nome,altura,dataNascimento)
     String nome;
     double altura;
     int diaNascimento;
@@ -17,11 +17,10 @@ public class Pessoa {
         this.anoNascimento = anoNascimento;
     }
 
-    public Pessoa() {// {construtor vazio}
-        // gets and setters
-
+    public Pessoa() {// construtor vazio
     }
 
+    // gets and sets
     public String getNome() {
         return nome;
     }
@@ -67,7 +66,8 @@ public class Pessoa {
     public void imprimir() {
         System.out.println("Nome: " + nome);
         System.out.println("Altura: " + altura);
-        System.out.println("Data de Nascimento: " + diaNascimento + "/" + mesNascimento + "/" + anoNascimento);
+        System.out.println("Data Nascimento: "
+                + diaNascimento + "/" + mesNascimento + "/" + anoNascimento);
     }
 
     public int getIdade() {

@@ -6,31 +6,29 @@ import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) {
-        Random rd = new Random(0);
-        // vetor de objetos
-        Agenda pessoas[] = new Agenda[10];
-        // preencher o meu vetor/array
-        for (int i = 0; i < pessoas.length; i++) {
-            // construtor de objetos
-            pessoas[i] = new Agenda();
+        Random rd = new Random();
+        // criar um vetor de 10 objetos
+        Agenda contatos[] = new Agenda[10];
+        // criar os objetos e preencher os atributos
+        for (int i = 0; i < contatos.length; i++) {
+            // criar o objeto
+            contatos[i] = new Agenda();
             // preencher os atributos
-            pessoas[i].setNome("Pessoa" + i);
-            pessoas[i].setAltura(i);
-            pessoas[i].setIdade(i + 18);
-
-            pessoas[i].imprimir();
+            contatos[i].setNome(JOptionPane.showInputDialog("Nome:"));
+            contatos[i].setIdade(i + 18);
+            contatos[i].setAltura(rd.nextDouble(1.5, 2));
         }
-        // buscador
-        String nomeDigitado = JOptionPane.showInputDialog("Nome Buscado:");
-        // enquanto nomeDigitado != nome do Objeto
-        // cont e procure
+        // procurar uma pessoa no vetor
+        String nomeBuscado = JOptionPane.showInputDialog(
+                "Digite um nome para buscar na agenda");
+        boolean procurar = true;
         int cont = 0;
-
-        while (!nomeDigitado.equals(pessoas[cont].getNome())) {
+        while (procurar) {
+            if (nomeBuscado.equals(contatos[cont].getNome())) {
+                procurar = false;
+                contatos[cont].imprimir();
+            }
             cont++;
         }
-        System.out.println("Nome: " + pessoas[cont].getNome() + "Idade: " + pessoas[cont].getIdade() + "Altura: "
-                + pessoas[cont].getAltura());
     }
-
 }
